@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Joyeux Anniversaire 🎉</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', sans-serif;
+         background: linear-gradient(135deg, #1e3c72, #2a5298);
+        color: #fff;
+        overflow-x: hidden;
+    }
+
+    .container {
+        padding: 20px;
+        max-width: 900px;
+        margin: auto;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 2.2em;
+        margin-top: 20px;
+    }
+
+    .subtitle {
+        font-size: 1.2em;
+        margin-bottom: 30px;
+    }
+
+    .card {
+        background: rgba(0,0,0,0.3);
+        padding: 20px;
+        border-radius: 20px;
+        margin-bottom: 25px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        animation: fadeIn 1.5s ease;
+    }
+
+    .photos {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+    }
+
+    .photo-card {
+        background: rgba(255,255,255,0.15);
+        border-radius: 15px;
+        overflow: hidden;
+    }
+
+    .photo-card img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        background: rgba(0,0,0,0.2);
+    }
+
+    .photo-card p {
+        padding: 10px;
+        font-size: 0.95em;
+    }
+
+    .emoji {
+        font-size: 2.5em;
+        animation: bounce 1.5s infinite;
+    }
+
+
+    #intro {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg, #0f2027, #203a43);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 999;
+}
+
+#intro h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease;
+}
+
+#intro button {
+    padding: 15px 35px;
+    border: none;
+    border-radius: 30px;
+    background: #ffcc00;
+    font-size: 1em;
+    cursor: pointer;
+    animation: glow 2s infinite;
+}
+
+    @keyframes bounce {
+        0%,100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: scale(0.95); }
+        to { opacity: 1; transform: scale(1); }
+    }
+
+    footer {
+        margin-top: 30px;
+        font-size: 0.9em;
+        opacity: 0.9;
+    }
+
+    /* Confettis */
+    .confetti {
+        position: fixed;
+        width: 8px;
+        height: 8px;
+        background-color: red;
+        top: -10px;
+        animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+        to {
+            transform: translateY(110vh) rotate(360deg);
+        }
+    }
+
+    .pulse {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+
+.surprise-btn {
+    margin-top: 20px;
+    padding: 12px 25px;
+    font-size: 1em;
+    border: none;
+    border-radius: 30px;
+    background: #ffcc00;
+    color: #333;
+    cursor: pointer;
+    animation: glow 2s infinite;
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 5px #ffcc00; }
+    50% { box-shadow: 0 0 20px #ffcc00; }
+    100% { box-shadow: 0 0 5px #ffcc00; }
+}
+
+/* Ballons */
+.balloon {
+    position: fixed;
+    bottom: -100px;
+    width: 40px;
+    height: 50px;
+    border-radius: 50%;
+    animation: float 8s linear infinite;
+    opacity: 0.8;
+}
+
+@keyframes float {
+    to {
+        transform: translateY(-120vh);
+    }
+}
+
+/* Photos animées */
+.photo-card {
+    animation: photoAppear 1.5s ease;
+}
+
+@keyframes photoAppear {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+</style>
+</head>
+<body>
+<div id="intro">
+    <div>
+        <h1>Une petite surprise pour toi 🎁</h1>
+        <button onclick="enterSite()">Entrer</button>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="emoji">🎉🎂🎁</div>
+
+    <h1>Joyeux Anniversaire Frérot 🎉</h1>
+    <p class="subtitle">
+        Aujourd’hui, est une journée spéciale pour la personne exceptionnelle que tu es frangin 💙
+    </p>
+
+   <div class="card">
+        <h2 class="pulse">Noël 🎉</h2>
+        <p id="typewriter"></p>
+        <button onclick="startSurprise()" class="surprise-btn">
+            🎁 Lancer la surprise
+        </button>
+    </div>
+
+
+    <div class="card">
+        <h2>📸 Souvenirs & Amitié</h2>
+        <div class="photos">
+
+            <div class="photo-card">
+                <img src="image1.jpeg" alt="Souvenir 1">
+                <p>Un ami toujours présent quand il faut 🤝</p>
+            </div>
+
+            <div class="photo-card">
+                <img src="image2.jpeg" alt="Souvenir 2">
+                <p>Des fous rires et des moments inoubliables 😂</p>
+            </div>
+
+            <div class="photo-card">
+                <img src="image3.jpeg" alt="Souvenir 3">
+                <p>Une amitié vraie et sincère 💙</p>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        🎈 Profite pleinement de ta journée ! 🎈<br>
+        — Ton ami ❤️
+    </footer>
+
+</div>
+
+<script>
+
+    function enterSite() {
+        document.getElementById('intro').style.display = 'none';
+        document.getElementById('content').classList.remove('hidden');
+    }
+    // 🎆 Confettis animés
+    const colors = ['#ff0', '#0ff', '#f0f', '#0f0', '#f00', '#00f'];
+
+    function createConfetti() {
+        const confetti = document.createElement('div');
+        confetti.classList.add('confetti');
+        confetti.style.left = Math.random() * window.innerWidth + 'px';
+        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+        document.body.appendChild(confetti);
+
+        setTimeout(() => confetti.remove(), 5000);
+    }
+
+    setInterval(createConfetti, 150);
+
+    const message = "Tout d'abord merci pour ton amitié sincère, ta loyauté et tous les moments incroyables que nous avons partagés. Je souhaite que cette nouvelle année t’apporte bonheur, réussite, prospérité, longevite,amour, plus de sagesse,la reussite finaciere et surtout la santé 🙏🙏🎉🎉";
+    let index = 0;
+
+    function typeWriter() {
+        if (index < message.length) {
+            document.getElementById("typewriter").innerHTML += message.charAt(index);
+            index++;
+            setTimeout(typeWriter, 50);
+        }
+    }
+
+    function startSurprise() {
+        typeWriter();
+        startBalloons();
+    }
+
+    function startBalloons() {
+        const colors = ['#ff6f61', '#ffd700', '#87ceeb', '#98fb98', '#dda0dd'];
+        setInterval(() => {
+            const balloon = document.createElement('div');
+            balloon.className = 'balloon';
+            balloon.style.left = Math.random() * window.innerWidth + 'px';
+            balloon.style.background = colors[Math.floor(Math.random() * colors.length)];
+            document.body.appendChild(balloon);
+
+            setTimeout(() => balloon.remove(), 8000);
+        }, 600);
+    }
+
+    document.querySelectorAll('.photo-card img').forEach(img => {
+        img.addEventListener('click', () => {
+            window.open(img.src, '_blank');
+        });
+    });
+</script>
+
+</body>
+</html>
